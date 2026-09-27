@@ -3,6 +3,10 @@ import requests
 from fastapi import FastAPI, Request, Response
 
 app = FastAPI()
+@app.get("/")
+async def inicio():
+    return {"mensaje": "¡El servidor del bot está activo y esperando mensajes!"}
+
 
 # Estas llaves las configurarás en tu plataforma de alojamiento (ej. Vercel)
 TOKEN_VERIFICACION = os.getenv("TOKEN_VERIFICACION") # Tú inventas una contraseña
